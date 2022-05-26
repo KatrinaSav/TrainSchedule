@@ -49,7 +49,7 @@ class Controller:
                 Factory.MsgAddRepeatPopup().open()
                 popup.dismiss()
                 return 0
-            self.model.add_note(train, st_from, st_to, depature, arrival, travel_time)
+            self.model.add_note(train.text, st_from.text, st_to.text, depature, arrival, travel_time)
             popup.dismiss()
             self.view.show_table()
         except:
@@ -60,7 +60,7 @@ class Controller:
         arrival = datetime.strptime(arr_d, '%Y.%d.%m-%H:%M')
         travel_time = arrival - departure
         if not self.check_for_train_repeat(train, departure):
-            return self.model.add_note_from_file(train, st_from, st_to, departure, arrival, travel_time)
+            return self.model.add_note(train, st_from, st_to, departure, arrival, travel_time)
 
     def search_by_number(self, num_of_train, table, label):
         result_of_search = self.model.search_by_number(num_of_train.text)

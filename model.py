@@ -6,10 +6,7 @@ class Model:
         self.data = []
 
     def add_note(self, train, st_from, st_to, depature, arrival, travel_time):
-        self.data.append([train.text, st_from.text, st_to.text, depature, arrival, travel_time])
-
-    def add_note_from_file(self, train, st_from, st_to, departure, arrival, travel_time):
-        self.data.append([train, st_from, st_to, departure, arrival, travel_time])
+        self.data.append([train, st_from, st_to, depature, arrival, travel_time])
 
     def search_by_number(self, train_num):
         result = []
